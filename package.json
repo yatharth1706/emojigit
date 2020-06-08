@@ -1,0 +1,11 @@
+{
+  "name": "now-config",
+  "version": "1.0.0",
+  "description": "A cli tool built using nodejs",
+  "main": "src/index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.1.0"
+  }
+}
