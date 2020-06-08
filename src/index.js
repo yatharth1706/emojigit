@@ -3,36 +3,35 @@
 const fs = require('fs');
 const fetch = require("node-fetch");
 const inquirer = require('inquirer');
-const ora = require("ora");
-const spinner = ora("loading emojis").start();
+const meow = require('meow');
+const { findCommand }= require('./utils/findCommand');
+const { list } = require('./commands/list');
 
-fetch("https://raw.githubusercontent.com/carloscuesta/gitmoji/master/src/data/gitmojis.json").then((res) => {
-        return res.json();
-    }).then((data) => {
-        let emojis = data.gitmojis;
-        let newEmojis = [];
-        emojis.forEach(element => {
-            newEmojis.push({
-                name : `${element.name} - ${element.emoji}`
-            })
-        });
-        setTimeout(() => {
-            spinner.color = 'yellow';
-            spinner.text = 'Loading Emojis';
-        }, 1000);
-        inquirer.prompt([
-                {
-                    type: 'list',
-                    name: 'listEmoji',
-                    message: 'Select emoji that you want to use: ',
-                    choices: newEmojis
-                },
-            ])
-            .then((answers) => {
-                console.log(answers);
-                
-            });
-    })
+const cli = meow(
+    `
+    Usage
+      $ yv-cli
+    Options
+      --list, -l      List all the available gitmojis
+      --version, -v   Print gitmoji-cli installed version
+    Examples
+      $ gitmoji -l
+      $ gitmoji bug linter -s
+  `,
+    {
+      flags: {
+        list: { type: 'boolean', alias: 'l' },
+        version: { type: 'boolean', alias: 'v' }
+      }
+    }
+  )
+
+const options = {
+    list : () => list()
+}
+
+findCommand(cli,options);
+
 
 
 
