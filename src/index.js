@@ -15,8 +15,7 @@ const cli = meow(
       --list, -l      List all the available gitmojis
       --version, -v   Print gitmoji-cli installed version
     Examples
-      $ gitmoji -l
-      $ gitmoji bug linter -s
+      $ yv-cli -l
   `,
     {
       flags: {
