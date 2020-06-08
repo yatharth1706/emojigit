@@ -1,11 +1,24 @@
 {
-  "name": "now-config",
+  "name": "yv-cli",
   "version": "1.0.0",
   "description": "A cli tool built using nodejs",
   "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src/"
+  },
+  "bin": {
+    "yv-cli": "src/index.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^7.1.0"
+    "inquirer": "^7.1.0",
+    "node-fetch": "^2.6.0",
+    "ora": "^4.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.21.1"
   }
 }
