@@ -39,6 +39,7 @@ function commit() {
                         const {stdout} = await execa('git', ['commit','-m',`${answers.chooseEmoji.split("-")[2]} - ${answers.commitMessage}`]);
                         console.log(chalk.cyan(stdout));
                         const spinner = ora(chalk.red('Pushing Code to Github Repository!!')).start();
+                        spinner.spinner = 'moon';
                         const {stdoutt} = await execa('git', ['push', '-u', 'origin', 'master']);
                         spinner.succeed(chalk.green("Pushed Successfully to your github repo!!"))   
                     })();
