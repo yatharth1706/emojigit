@@ -2,6 +2,7 @@ const execa = require('execa');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
 const fetch = require('node-fetch');
+const ora = require('ora');
 
 function commit() {
     try{
