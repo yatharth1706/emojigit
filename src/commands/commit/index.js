@@ -5,8 +5,7 @@ const fetch = require('node-fetch');
 const ora = require('ora');
 
 const spinner = new ora({
-	text: chalk.red('Pushing Code to Github Repository!!'),
-	spinner: 'moon'
+	text: chalk.red('Pushing Code to Github Repository!!')
 })
 
 function commit() {
