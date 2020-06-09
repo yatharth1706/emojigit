@@ -1,6 +1,6 @@
 ## yv-cli
 
-Buiding CLI tool for managing my github workflow in an easy way
+:package: Buiding CLI tool for managing my github workflow in an easy way
 
 ### Tech Stack
 
