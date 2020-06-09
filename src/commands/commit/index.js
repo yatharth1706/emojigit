@@ -4,6 +4,11 @@ const inquirer = require('inquirer');
 const fetch = require('node-fetch');
 const ora = require('ora');
 
+const spinner = new ora({
+	text: chalk.red('Pushing Code to Github Repository!!'),
+	spinner: 'moon'
+})
+
 function commit() {
     try{
         // first ask questions about what is the commit message and then ask which emoji you want to use
@@ -38,8 +43,7 @@ function commit() {
                     ( async () => {
                         const {stdout} = await execa('git', ['commit','-m',`${answers.chooseEmoji.split("-")[2]} - ${answers.commitMessage}`]);
                         console.log(chalk.cyan(stdout));
-                        const spinner = ora(chalk.red('Pushing Code to Github Repository!!')).start();
-                        spinner.spinner = 'moon';
+                        spinner.start();
                         const {stdoutt} = await execa('git', ['push', '-u', 'origin', 'master']);
                         spinner.succeed(chalk.green("Pushed Successfully to your github repo!!"))   
                     })();
