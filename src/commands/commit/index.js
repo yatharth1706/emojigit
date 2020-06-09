@@ -29,7 +29,7 @@ function commit() {
                     {
                         type: 'input',
                         name: 'commitMessage',
-                        message: 'Commit Message',
+                        message: 'Commit Message:'
                     }
                 ]
             ).then((answers) => {
