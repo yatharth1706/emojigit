@@ -38,7 +38,7 @@ function commit() {
                         const {stdout} = await execa('git', ['commit','-m',`${answers.chooseEmoji.split("-")[2]} - ${answers.commitMessage}`]);
                         console.log(chalk.cyan(stdout));
                         const {stdoutt} = await execa('git', ['push', '-u', 'origin', 'master']);
-                        console.log(chalk.green(stdoutt));   
+                        console.log(chalk.green("Pushed Successfully to your github repo!!"));   
                     })();
                 
                 }catch(error){
