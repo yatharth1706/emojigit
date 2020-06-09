@@ -36,7 +36,9 @@ function commit() {
                 try{
                     ( async () => {
                         const {stdout} = await execa('git', ['commit','-m',`${answers.chooseEmoji.split("-")[2]} - ${answers.commitMessage}`]);
-                        console.log(stdout);
+                        console.log(chalk.cyan(stdout));
+                        const {stdout2} = await execa('git', ['push', '-u', 'origin', 'master']);
+                        console.log(chalk.green(stdout2));
                     })();
                 
                 }catch(error){
