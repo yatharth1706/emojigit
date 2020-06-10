@@ -1,6 +1,6 @@
 {
   "name": "emojigit",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A cli tool built using nodejs",
   "main": "src/index.js",
   "scripts": {
@@ -20,6 +20,16 @@
     "node-fetch": "^2.6.0",
     "ora": "^4.0.4"
   },
+  "keywords": [
+    "emojigit",
+    "emojis",
+    "yatharth",
+    "commit",
+    "commit with emojis",
+    "emojisingit",
+    "git emojis",
+    "git commit"
+  ],
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
