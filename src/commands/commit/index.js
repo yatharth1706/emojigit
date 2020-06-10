@@ -11,8 +11,13 @@ const spinner = new ora({
 	text: chalk.red('Pushing Your Code to Github Repository!!')
 })
 
+const emojisSpinner = new ora({
+    text: chalk.green('Loading Emojis! Please Wait!')
+})
+
 function commit() {
     try{
+        emojisSpinner.start();
         // first ask questions about what is the commit message and then ask which emoji you want to use
         fetch('https://raw.githubusercontent.com/carloscuesta/gitmoji/master/src/data/gitmojis.json')
         .then((res) => res.json())
@@ -24,7 +29,7 @@ function commit() {
                     "name" : `${el.emoji} - ${el.description} - ${el.code}`
                 })
             });
-
+            emojisSpinner.succeed(chalk.yellow("Successfully Loaded!!!"));
             inquirer
             .prompt(
                 [
@@ -60,7 +65,7 @@ function commit() {
                         console.log(chalk.cyan(stdout));
                         spinner.start();
                         const {stdoutt} = await execa('git', ['push', '-u', 'origin', 'master']);
-                        spinner.succeed(chalk.green("Pushed Successfully to your github repo!!"))   
+                        spinner.succeed(chalk.magenta("Pushed Successfully to your github repo!!"))   
                     })();
                 
                 }catch(error){
