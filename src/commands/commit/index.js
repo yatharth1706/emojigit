@@ -37,6 +37,17 @@ function commit() {
                     {
                         name: 'commitMessage',
                         message: 'Type Commit Message:',
+                        validate: (input) => {
+                            if(!input){
+                                return chalk.red("Please enter valid commit message!");
+                            }
+
+                            if(input.length > 50){
+                                return chalk.red("Too many characters!!");
+                            }
+
+                            return true;
+                        },
                         transformer: (input) => {
                             return `[${input.length}/50]: ${input}`
                         }
