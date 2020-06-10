@@ -32,7 +32,7 @@ const list = () => {
                 }
             ]
         ).then((answers) => {
-            console.log(chalk.white.inverse("Github Code for chosen emoji is:"),answers.chooseEmoji.split("-")[2]);
+            console.log(chalk.yellow.inverse("Github Code for chosen emoji is:"),answers.chooseEmoji.split("-")[2]);
         })
     })
 }
