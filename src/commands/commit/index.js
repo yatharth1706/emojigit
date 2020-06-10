@@ -12,7 +12,7 @@ const spinner = new ora({
 })
 
 const emojisSpinner = new ora({
-    text: chalk.green('Loading Emojis! Please Wait!')
+    text: chalk.green('Loading!!')
 })
 
 function commit() {
@@ -29,16 +29,11 @@ function commit() {
                     "name" : `${el.emoji} - ${el.description} - ${el.code}`
                 })
             });
-            emojisSpinner.succeed(chalk.yellow("Successfully Loaded!!!"));
+            emojisSpinner.succeed(chalk.yellow("Configuration for Commit Message!!!"));
             inquirer
             .prompt(
                 [
-                    {
-                        type: 'list',
-                        name: 'chooseEmoji',
-                        message: 'Choose any emoji from below:',
-                        choices: emojis
-                    },
+                    
                     {
                         name: 'commitMessage',
                         message: 'Type Commit Message:',
@@ -57,6 +52,7 @@ function commit() {
                             return `[${input.length}/50]: ${input}`
                         }
                     },
+
                     {
                         type:"input",
                         name: "remoteName",
@@ -68,6 +64,12 @@ function commit() {
                         name: "branchName",
                         message: "Enter branch name",
                         default: "master"
+                    },
+                    {
+                        type: 'list',
+                        name: 'chooseEmoji',
+                        message: 'Choose any emoji from below:',
+                        choices: emojis
                     }
                 ]
             ).then((answers) => {
