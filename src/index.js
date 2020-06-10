@@ -8,18 +8,17 @@ const { findCommand }= require('./utils/findCommand');
 const { list } = require('./commands/list');
 const { commit } = require('./commands/commit');
 
-
 const cli = meow(
     `
     Usage
-      $ yv-cli
+      $ emojigit
     Options
       --list, -l      List all the available gitmojis
       --commit, -c    Commit to github Repository
       --version, -v   Print gitmoji-cli installed version
     Examples
-      $ yv-cli -l
-      $ yv-cli -c
+      $ emojigit -l
+      $ emojigit -c
   `,
     {
       flags: {

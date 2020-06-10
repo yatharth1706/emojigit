@@ -1,5 +1,5 @@
 {
-  "name": "yv-cli",
+  "name": "emojigit",
   "version": "1.0.0",
   "description": "A cli tool built using nodejs",
   "main": "src/index.js",
@@ -7,7 +7,7 @@
     "lint": "eslint src/"
   },
   "bin": {
-    "yv-cli": "src/index.js"
+    "emojigit": "src/index.js"
   },
   "author": "",
   "license": "ISC",
