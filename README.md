@@ -3,6 +3,13 @@
 :package: Built Interactive CLI tool for using emojis on commit messages and push is automatically done after each commit!
 
 ## CLI Commands
+
+### Install
+
+```
+    npm install -g emojigit
+```
+
 ```
     emojigit --help
 ```
