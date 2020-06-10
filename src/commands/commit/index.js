@@ -3,6 +3,9 @@ const chalk = require('chalk');
 const inquirer = require('inquirer');
 const fetch = require('node-fetch');
 const ora = require('ora');
+const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
+
+inquirer.registerPrompt('maxInput', MaxLengthInputPrompt);
 
 const spinner = new ora({
 	text: chalk.red('Pushing Your Code to Github Repository!!')
@@ -32,9 +35,11 @@ function commit() {
                         choices: emojis
                     },
                     {
-                        type: 'input',
                         name: 'commitMessage',
-                        message: 'Type Commit Message:'
+                        message: 'Type Commit Message:',
+                        transformer: (input) => {
+                            return `[${input.length}/50]: ${input}`
+                        }
                     }
                 ]
             ).then((answers) => {
