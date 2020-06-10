@@ -9,7 +9,7 @@ const emojisSpinner = ora({
 
 const list = () => {
     emojisSpinner.start();
-    fetch('https://raw.githubusercontent.com/carloscuesta/gitmoji/master/src/data/gitmojis.json')
+    fetch('https://raw.githubusercontent.com/yatharth1706/emojigit/master/src/data/emojis.json')
     .then((res) => res.json())
     .then((data) => {
         emojisSpinner.succeed(chalk.magenta("Successfully Loaded!!"));

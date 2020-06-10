@@ -19,7 +19,7 @@ function commit() {
     try{
         emojisSpinner.start();
         // first ask questions about what is the commit message and then ask which emoji you want to use
-        fetch('https://raw.githubusercontent.com/carloscuesta/gitmoji/master/src/data/gitmojis.json')
+        fetch('https://raw.githubusercontent.com/yatharth1706/emojigit/master/src/data/emojis.json')
         .then((res) => res.json())
         .then((data) => {
             let tempEmojis = data.gitmojis;
