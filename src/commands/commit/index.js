@@ -60,13 +60,13 @@ function commit() {
                     {
                         type:"input",
                         name: "remoteName",
-                        message: "Write remote git name",
+                        message: "Enter remote git name",
                         default: "origin" 
                     },
                     {
                         type:"input",
                         name: "branchName",
-                        message: "Write branch name",
+                        message: "Enter branch name",
                         default: "master"
                     }
                 ]
