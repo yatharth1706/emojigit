@@ -1,6 +1,20 @@
 {
     "gitmojis": [
       {
+        "emoji": "🚀",
+        "entity": "&#x1f680;",
+        "code": ":rocket:",
+        "description": "Deploying stuff.",
+        "name": "rocket"
+      },
+      {
+        "emoji": "💄",
+        "entity": "&#ff99cc;",
+        "code": ":lipstick:",
+        "description": "Adding or updating the UI and style files.",
+        "name": "lipstick"
+      },
+      {
         "emoji": "🎨",
         "entity": "&#x1f3a8;",
         "code": ":art:",
@@ -48,20 +62,6 @@
         "code": ":pencil:",
         "description": "Writing docs.",
         "name": "pencil"
-      },
-      {
-        "emoji": "🚀",
-        "entity": "&#x1f680;",
-        "code": ":rocket:",
-        "description": "Deploying stuff.",
-        "name": "rocket"
-      },
-      {
-        "emoji": "💄",
-        "entity": "&#ff99cc;",
-        "code": ":lipstick:",
-        "description": "Adding or updating the UI and style files.",
-        "name": "lipstick"
       },
       {
         "emoji": "🎉",

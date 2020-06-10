@@ -56,6 +56,18 @@ function commit() {
                         transformer: (input) => {
                             return `[${input.length}/50]: ${input}`
                         }
+                    },
+                    {
+                        type:"input",
+                        name: "remoteName",
+                        message: "Write remote git name",
+                        default: "origin" 
+                    },
+                    {
+                        type:"input",
+                        name: "branchName",
+                        message: "Write branch name",
+                        default: "master"
                     }
                 ]
             ).then((answers) => {
@@ -64,8 +76,8 @@ function commit() {
                         const {stdout} = await execa('git', ['commit','-m',`${answers.chooseEmoji.split("-")[2]} - ${answers.commitMessage}`]);
                         console.log('\n',chalk.cyan(stdout,'\n'));
                         spinner.start();
-                        const {stdoutt} = await execa('git', ['push', '-u', 'origin', 'master']);
-                        spinner.succeed(chalk.magenta("Pushed Successfully to your github repo!!"))   
+                        const {stdoutt} = await execa('git', ['push', '-u', `${answers.remoteName}`, `${answers.branchName}`]);
+                        spinner.succeed(chalk.magenta(`Pushed Successfully to ${answers.branchName} branch!!`))   
                     })();
                 
                 }catch(error){
