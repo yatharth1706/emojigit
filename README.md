@@ -1,6 +1,23 @@
-## yv-cli
+## emojigit
 
-:package: Buiding CLI tool for managing my github workflow in an easy way
+:package: Built Interactive CLI tool for using emojis on commit messages and push is automatically done after each commit!
+
+## CLI Commands
+```
+    emojigit --help
+```
+
+```
+    Usage
+      $ emojigit
+    Options
+      --list, -l      List all the available gitmojis
+      --commit, -c    Commit to github Repository
+      --version, -v   Print gitmoji-cli installed version
+    Examples
+      $ emojigit -l
+      $ emojigit -c
+```
 
 ### Tech Stack
 
