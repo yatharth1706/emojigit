@@ -1,6 +1,6 @@
 {
   "name": "emojigit",
-  "version": "1.4.4",
+  "version": "1.5.3",
   "description": "A cli tool built using nodejs",
   "main": "src/index.js",
   "scripts": {
