@@ -34,7 +34,7 @@
       $ emojigit -c
 ```
 
-### Tech Stack
+### :wrench: Tools Used
 
 * [x] Nodejs
 * [x] Inquirer
